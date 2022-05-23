@@ -1,23 +1,44 @@
-import Head from 'next/head'
+import PostCard from '../components/post-card'
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>Netw Starter</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-
-      <div className='w-full min-h-screen antialiased text-slate-900 bg-slate-50 font-inter'>
-        <div className='section'>
-          <div className='container text-center'>
-            <h1 className='text-4xl font-extrabold tracking-tight text-center text-slate-900 sm:text-5xl lg:text-6xl dark:text-white'>
-              Rapidly build modern websites without ever leaving your HTML.
-            </h1>
-            <div className='pt-8 text-xl font-medium text-slate-500'>
-              A utility-first CSS framework packed with classes like flex, pt-4, text-center and
-              rotate-90 that can be composed to build any design, directly in your markup.
+      <div className='section'>
+        <div className='container'>
+          <div className='flex'>
+            <div className='w-[200px]'></div>
+            <div className='space-y-8'>
+              <PostCard />
+              <PostCard />
+              <PostCard />
+              <div className='border shadow rounded-xl'>
+                <div className='px-6 py-6'>
+                  <div className='flex gap-x-4'>
+                    <figure className='w-8 h-8 border-2 border-indigo-600 rounded-full'>
+                      <img
+                        className='rounded-full'
+                        src='https://avatars.githubusercontent.com/u/29818436?v=4'
+                        alt=''
+                      />
+                    </figure>
+                    <div className='text-xs'>
+                      <h4>zfadhli</h4>
+                      <p>May 22 (2 hours ago)</p>
+                    </div>
+                  </div>
+                  <div className='pt-4 ml-12'>
+                    <h3 className='text-2xl font-medium'>How to clone dev.to</h3>
+                    <div className='flex items-center justify-between pt-4 text-sm'>
+                      <a className='px-3 py-2 -ml-3 hover:bg-slate-100' href='#'>
+                        ❤ 24 reactions
+                      </a>
+                      <p>3 min read</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <div className='w-[200px]'></div>
           </div>
         </div>
       </div>
