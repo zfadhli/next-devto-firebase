@@ -9,7 +9,7 @@ export default function Layout({ children }) {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <div className='w-full min-h-screen antialiased text-slate-900 bg-slate-50 font-inter'>
+      <div className='w-full min-h-screen antialiased text-slate-900 bg-slate-100 font-inter'>
         <Navbar />
         <main>{children}</main>
       </div>

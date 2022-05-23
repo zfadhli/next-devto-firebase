@@ -1,6 +1,22 @@
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 import GoogleButton from 'react-google-button'
+import { useAuth } from '@lib/use-auth'
 
 export default function LoginPage() {
+  const router = useRouter()
+  const { user, login } = useAuth()
+
+  const handleLogin = async () => {
+    await login()
+  }
+
+  useEffect(() => {
+    if (user) {
+      router.push('/')
+    }
+  }, [user])
+
   return (
     <>
       <section className='section'>
@@ -12,7 +28,7 @@ export default function LoginPage() {
             </p>
           </div>
           <div className='flex items-center justify-center pt-8'>
-            <GoogleButton />
+            <GoogleButton onClick={handleLogin} />
           </div>
         </div>
       </section>

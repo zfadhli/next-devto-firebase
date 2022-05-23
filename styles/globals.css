@@ -10,6 +10,6 @@
     @apply relative w-full max-w-2xl px-6 mx-auto;
   }
   .section {
-    @apply relative py-20 bg-slate-50;
+    @apply relative py-20 bg-slate-100;
   }
 }
