@@ -1,12 +1,14 @@
 import Link from 'next/link'
 import { Menu } from '@headlessui/react'
 import { useAuth } from '@lib/use-auth'
+import { useUser } from '@lib/use-user'
 import { useRouter } from 'next/router'
 import { NavLink } from '@components/nav-link'
 
 export default function Navbar() {
   const router = useRouter()
-  const { user, logout } = useAuth()
+  const { user, username } = useUser()
+  const { logout } = useAuth()
 
   const handleLogout = async () => {
     await logout()
@@ -33,11 +35,7 @@ export default function Navbar() {
                 <Menu as='div' className='relative'>
                   <Menu.Button>
                     <figure className='w-12 h-12 border-2 border-indigo-600 rounded-full'>
-                      <img
-                        className='rounded-full'
-                        src='https://avatars.githubusercontent.com/u/29818436?v=4'
-                        alt=''
-                      />
+                      <img className='rounded-full' src={user?.photoURL} alt='' />
                     </figure>
                   </Menu.Button>
                   <Menu.Items className='absolute right-0 z-10 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
@@ -51,7 +49,7 @@ export default function Navbar() {
                         >
                           <span className='block'>{user?.displayName}</span>
                           <span className='block text-xs text-slate-700 group-hover:text-slate-200'>
-                            @{user?.displayName}
+                            @{username}
                           </span>
                         </a>
                       )}

@@ -6,6 +6,7 @@ import { useAuth } from '@lib/use-auth'
 export default function LoginPage() {
   const router = useRouter()
   const { user, login } = useAuth()
+  console.log(user)
 
   const handleLogin = async () => {
     await login()
@@ -13,7 +14,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     if (user) {
-      router.push('/')
+      router.push('/auth/username')
     }
   }, [user])
 
