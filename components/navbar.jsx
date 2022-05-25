@@ -41,17 +41,17 @@ export default function Navbar() {
                   <Menu.Items className='absolute right-0 z-10 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'>
                     <Menu.Item>
                       {({ active }) => (
-                        <a
-                          className={`block px-4 py-2 text-sm hover:text-white group ${
+                        <NavLink
+                          href={`/users/${username}`}
+                          className={`block px-4 py-2 text-sm hover:text-white ${
                             active && 'bg-indigo-600 text-white'
                           }`}
-                          href={`/users/${user?.displayName}`}
                         >
                           <span className='block'>{user?.displayName}</span>
                           <span className='block text-xs text-slate-700 group-hover:text-slate-200'>
                             @{username}
                           </span>
-                        </a>
+                        </NavLink>
                       )}
                     </Menu.Item>
                     <hr />
