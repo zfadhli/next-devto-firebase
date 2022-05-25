@@ -1,6 +1,7 @@
 import { useState, useEffect, createContext } from 'react'
 import { GoogleAuthProvider, signInWithRedirect, signOut, onAuthStateChanged } from 'firebase/auth'
-import { auth } from '@lib/firebase'
+import { auth, db } from '@lib/firebase'
+import { doc, getDoc } from 'firebase/firestore'
 
 export const AuthContext = createContext({})
 const provider = new GoogleAuthProvider()

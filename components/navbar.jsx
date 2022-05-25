@@ -9,6 +9,7 @@ export default function Navbar() {
   const router = useRouter()
   const { user, username } = useUser()
   const { logout } = useAuth()
+  console.log(username)
 
   const handleLogout = async () => {
     await logout()
