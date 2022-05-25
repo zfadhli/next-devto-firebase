@@ -25,9 +25,9 @@ export default function Home() {
         <div className='container'>
           <div className='flex'>
             <div className='w-[200px]'></div>
-            <div className='space-y-8'>
+            <div className='flex-1 space-y-8'>
               {posts.map((post) => (
-                <div className='border shadow rounded-xl' key={post.slug}>
+                <div className='bg-white border shadow rounded-xl' key={post.slug}>
                   <div className='px-8 py-8'>
                     <div className='flex gap-x-4'>
                       <figure className='w-8 h-8 border-2 border-indigo-600 rounded-full'>

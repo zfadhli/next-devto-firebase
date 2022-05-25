@@ -8,7 +8,6 @@ export default function PostsPage() {
   const { user } = useAuth()
   const [posts, setPosts] = useState([])
   useEffect(() => {
-    // const unsubscribe = query(db, collectionGroup('posts'))
     return () => getPosts()
   }, [])
 
