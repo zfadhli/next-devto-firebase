@@ -2,13 +2,13 @@ export default function PostCard() {
   return (
     <>
       <div className='border shadow rounded-xl'>
-        <figure>
+        {/* <figure>
           <img
             className='rounded-t-xl'
             src='https://res.cloudinary.com/practicaldev/image/fetch/s--FCf6OelP--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/xu037gv870tiubwb1lb9.jpg'
             alt=''
           />
-        </figure>
+        </figure> */}
         <div className='px-8 py-8'>
           <div className='flex gap-x-4'>
             <figure className='w-8 h-8 border-2 border-indigo-600 rounded-full'>
