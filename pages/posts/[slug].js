@@ -19,7 +19,6 @@ export default function PostPage() {
     const docSnap = await getDoc(docRef)
     setPost(null)
     if (docSnap.exists()) {
-      console.log('Document data:', docSnap.data())
       setPost(docSnap.data())
     } else {
       console.log('No such document!')
