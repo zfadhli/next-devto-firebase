@@ -30,11 +30,7 @@ export default function PostsPage() {
                 <div className='px-8 py-8'>
                   <div className='flex gap-x-4'>
                     <figure className='w-8 h-8 border-2 border-indigo-600 rounded-full'>
-                      <img
-                        className='rounded-full'
-                        src='https://avatars.githubusercontent.com/u/29818436?v=4'
-                        alt=''
-                      />
+                      <img className='rounded-full' src={post?.avatar} alt='' />
                     </figure>
                     <div className='text-xs'>
                       <h4>{post.username}</h4>
