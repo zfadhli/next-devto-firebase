@@ -1,4 +1,4 @@
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 import { useForm } from 'react-hook-form'
 import slugify from '@sindresorhus/slugify'
 import { useUser } from '@lib/use-user'
@@ -6,13 +6,14 @@ import { db } from '@lib/firebase'
 import { doc, setDoc } from 'firebase/firestore'
 
 export default function NewPostPage() {
-    const router = useRouter()
+  const router = useRouter()
   const { user, username } = useUser()
   const { register, handleSubmit, errors } = useForm()
   const onSubmit = handleSubmit(async (data) => {
     const post = {
       uid: user.uid,
       username: username,
+      avatar: user.photoURL,
       title: data.title,
       slug: slugify(data.title),
       content: data.content,

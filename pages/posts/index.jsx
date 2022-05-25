@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { db } from '@lib/firebase'
 import { collectionGroup, query, where, getDocs } from 'firebase/firestore'
+import { useAuth } from '@lib/use-auth'
 
 export default function PostsPage() {
+  const { user } = useAuth()
   const [posts, setPosts] = useState([])
   useEffect(() => {
     // const unsubscribe = query(db, collectionGroup('posts'))
@@ -11,15 +13,12 @@ export default function PostsPage() {
   }, [])
 
   const getPosts = async () => {
-    const museums = query(collectionGroup(db, 'posts'))
+    const museums = query(collectionGroup(db, 'posts'), where('uid', '==', user.uid))
     const querySnapshot = await getDocs(museums)
     setPosts([])
     querySnapshot.forEach((doc) => {
-      console.log(doc.id, ' => ', doc.data())
       setPosts((post) => [...post, doc.data()])
-      console.log({ posts })
     })
-    console.log({ posts })
   }
 
   return (
